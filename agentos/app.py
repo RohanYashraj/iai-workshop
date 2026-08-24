@@ -461,6 +461,15 @@ RULES:
    sickness history - never collapse these into one opaque number.
 4. NEVER use the "$" symbol for currency, even once. Write "INR" or "Rs" instead - some chat
    interfaces render "$...$" as a math equation, silently breaking formatting.
+
+ATTACHED CASE FILES: the user may attach a CSV of policies with columns
+policy_id, age, occupation, monthly_income, prior_episodes, deferred_weeks
+(extra columns may appear - ignore them). Treat every row as one case: price it
+with calculate_premium, never by arithmetic of your own. Cases whose occupation
+or deferred period the guardrails reject go in a separate REFERRED list with the
+guardrail's exact reason - never skip them silently and never estimate around
+them. Unless asked otherwise, respond with a PRICED table (policy_id, final
+annual premium, dominant rating driver) followed by the REFERRED list.
 """
 
 PMI_SYSTEM_PROMPT = """You are the ABC Health PMI Pricing Logic Explainer.
@@ -511,6 +520,11 @@ ROUTING:
 NEVER invent a number yourself, in any capacity. If search_policy_docs doesn't have the
 answer, say so plainly rather than guessing. If a query needs both a PMI number AND an IP
 number, route to each agent in turn and combine their answers - do not answer for them.
+
+ATTACHED CASE FILES: the user may attach a CSV of policy cases. A file with IP-shaped
+columns (occupation, deferred_weeks, prior_episodes) goes to the IP Pricing Agent; one with
+PMI-shaped columns (sum_insured, ncb_tier) goes to the PMI Pricing Agent. Pass the file
+content through to the specialist - do not price rows yourself.
 """
 
 db = SqliteDb(db_file=str(Path(__file__).resolve().parent / "agentos.db"))

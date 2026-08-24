@@ -24,6 +24,12 @@ The 200-case file is what Scenario 4's industrialised loop consumes: one
 `POST /agents/ip-pricing-agent/runs` per row, with the guardrails referring
 the 17 unpriceable cases automatically.
 
+**Attachments:** instead of pasting the tables from Scenarios 2 and 3 into the
+chat, you can attach the corresponding CSV directly (paperclip button in the
+os.agno.com UI, or `-F "files=@..."` on the API) and simply ask *"Price each
+case in the attached file."* The IP agent knows the schema and returns a
+PRICED table plus a REFERRED list with each guardrail's reason.
+
 ---
 
 ## Scenario 1 — One policy (the case the Chief forwarded first)

@@ -40,6 +40,23 @@ interactive OpenAPI page, or from the terminal:
 curl -X POST "http://localhost:7777/teams/abc-health-pricing-desk/runs" -F "message=I'm 52, sum insured Rs 10,00,000, 30% NCB. What's my PMI premium?" -F "stream=false"
 ```
 
+## Working with attached case files
+
+Both the chat UI and the API accept file attachments, and the IP agent knows
+the scenario CSV schema (`policy_id, age, occupation, monthly_income,
+prior_episodes, deferred_weeks`). Attach a file from [`scenarios/`](scenarios/)
+and ask for a batch pricing:
+
+- **In the os.agno.com UI:** use the attachment (paperclip) button in the chat
+  input, attach e.g. `scenarios/scenario_10_policies.csv`, and ask:
+  *"Price each case in the attached file."* You get a PRICED table plus a
+  REFERRED list for the cases the guardrails reject.
+- **Via the API:**
+
+```bash
+curl -X POST "http://localhost:7777/agents/ip-pricing-agent/runs" -F "message=Price each case in the attached file." -F "stream=false" -F "files=@agentos/scenarios/scenario_10_policies.csv;type=text/csv"
+```
+
 ## Things worth demonstrating
 
 1. **A priced quote with a full build-up** (routes to the IP agent):
