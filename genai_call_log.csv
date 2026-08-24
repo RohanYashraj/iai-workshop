@@ -27,3 +27,59 @@ For each: name, direction (increase/decrease premium), one-line justification. R
     ""justification"": ""Tobacco use is strongly correlated with a higher risk of developing expensive-to-treat diseases like cancer and heart conditions.""
   }
 ]"
+2026-08-24T17:09:27.064409+00:00,gemini-3.5-flash-lite,"For individual PMI (health) cover, list 5 rating factors.
+For each: name, direction (increase/decrease premium), one-line justification. Return JSON.","[
+  {
+    ""name"": ""Age"",
+    ""direction"": ""increase"",
+    ""justification"": ""Older individuals have a higher statistical probability of requiring medical treatment and claiming on their policy.""
+  },
+  {
+    ""name"": ""Geographic Location"",
+    ""direction"": ""increase"",
+    ""justification"": ""Regions with higher concentrations of private healthcare facilities and elevated treatment costs incur higher premiums.""
+  },
+  {
+    ""name"": ""Level of Excess (Deductible)"",
+    ""direction"": ""decrease"",
+    ""justification"": ""A higher voluntary excess shifts more initial financial risk to the policyholder, reducing the insurer's potential payout.""
+  },
+  {
+    ""name"": ""Smoking Status"",
+    ""direction"": ""increase"",
+    ""justification"": ""Tobacco use correlates with a greater risk of developing chronic health conditions, leading to increased medical claims.""
+  },
+  {
+    ""name"": ""Underwriting Type (e.g., Full Medical Underwriting vs. Moratorium)"",
+    ""direction"": ""decrease"",
+    ""justification"": ""Strict underwriting excludes pre-existing conditions, which lowers the insurer's risk profile and reduces the policy cost.""
+  }
+]"
+2026-08-24T17:15:26.822101+00:00,gemini-3.5-flash-lite,"For individual PMI (health) cover, list 5 rating factors.
+For each: name, direction (increase/decrease premium), one-line justification. Return JSON.","[
+  {
+    ""name"": ""Age"",
+    ""direction"": ""increase"",
+    ""justification"": ""Older individuals have a statistically higher likelihood of requiring medical treatment and claiming on their policy.""
+  },
+  {
+    ""name"": ""Location"",
+    ""direction"": ""increase"",
+    ""justification"": ""Regions with higher costs of living and more expensive private healthcare facilities result in higher claim payouts.""
+  },
+  {
+    ""name"": ""Level of Excess"",
+    ""direction"": ""decrease"",
+    ""justification"": ""Agreeing to pay a higher voluntary excess shifts more initial financial risk to the policyholder, reducing insurer payouts.""
+  },
+  {
+    ""name"": ""Smoking Status"",
+    ""direction"": ""increase"",
+    ""justification"": ""Tobacco use significantly increases the risk of developing chronic health conditions and severe illnesses.""
+  },
+  {
+    ""name"": ""Hospital Network Tier"",
+    ""direction"": ""decrease"",
+    ""justification"": ""Choosing a restricted or local hospital network rather than a comprehensive nationwide network lowers the insurer's facility costs.""
+  }
+]"
