@@ -1,0 +1,6 @@
+policy_id,age,occupation,monthly_income,prior_episodes,deferred_weeks
+ABC-IP-118421,29,desk,55000,0,13
+ABC-IP-118422,52,manual,65000,1,13
+ABC-IP-118423,38,desk,120000,0,26
+ABC-IP-118424,45,manual,40000,2,4
+ABC-IP-118425,58,desk,90000,0,52

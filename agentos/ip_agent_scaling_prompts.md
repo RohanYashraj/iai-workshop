@@ -11,6 +11,19 @@ against the **IP Pricing Agent** — the point of the arc is that the same
 governed tools answer one case and two hundred, and the guardrails refuse at
 every scale.
 
+Each scenario's case data is also provided as a CSV in [`scenarios/`](scenarios/):
+
+| Scenario | File | Cases |
+|---|---|---|
+| 1 policy | [`scenarios/scenario_1_policy.csv`](scenarios/scenario_1_policy.csv) | ABC-IP-118420 |
+| 5 policies | [`scenarios/scenario_5_policies.csv`](scenarios/scenario_5_policies.csv) | 118421–118425 |
+| 10 policies | [`scenarios/scenario_10_policies.csv`](scenarios/scenario_10_policies.csv) | 118426–118435 (3 will be referred) |
+| 200 policies | [`scenarios/scenario_200_policies.csv`](scenarios/scenario_200_policies.csv) | 118420–118619: the full book — the 16 cases above as its first rows, then 184 more (183 clean, 9 unmodelled occupations, 8 non-standard deferred periods) |
+
+The 200-case file is what Scenario 4's industrialised loop consumes: one
+`POST /agents/ip-pricing-agent/runs` per row, with the guardrails referring
+the 17 unpriceable cases automatically.
+
 ---
 
 ## Scenario 1 — One policy (the case the Chief forwarded first)
