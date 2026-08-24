@@ -1,6 +1,16 @@
-# IAI Seminar — Local Environment
+# IAI Seminar — Workshop Notebooks
 
-Everything needed to run notebooks `01`–`06` plus `data_notebook.ipynb` locally, outside Colab. Dependencies were extracted directly from every `%pip install` line and `import` statement across all seven notebooks, then locked with `uv`.
+Notebooks `01`–`06` plus `data_notebook.ipynb`, runnable either in Google Colab or locally.
+
+## Running in Google Colab (recommended for participants)
+
+1. Open a notebook in Colab (File → Open notebook → GitHub → `RohanYashraj/iai-workshop`).
+2. Add your Gemini API key once: click the **🔑 Secrets** icon in Colab's left sidebar, add a secret named `GOOGLE_API_KEY` with your key, and toggle **Notebook access** on.
+3. Run the cells top to bottom. Each notebook installs its own dependencies (`%pip install` in the first cell) and downloads any data files it needs from this repo automatically — no other setup required.
+
+## Running locally
+
+Everything needed to run all seven notebooks locally, outside Colab. Dependencies were extracted directly from every `%pip install` line and `import` statement across all seven notebooks, then locked with `uv`.
 
 ## Setup
 
