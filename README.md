@@ -36,11 +36,13 @@ uv run jupyter lab
 
 ## API key (local, non-Colab use)
 
-The notebooks all try Colab Secrets first, then fall back to a local `.env` file. Create one next to the notebooks:
+The notebooks all try Colab Secrets first, then fall back to a local `.env` file. Copy the provided example and fill in your key:
 
+```bash
+cp .env.example .env
 ```
-GOOGLE_API_KEY=your-key-here
-```
+
+Then edit `.env` and replace the placeholder with your own Gemini API key.
 
 `python-dotenv` (included) picks this up automatically via each notebook's existing `try: ... except: load_dotenv()` fallback — no notebook code changes needed.
 
