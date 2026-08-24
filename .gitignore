@@ -44,3 +44,6 @@ Thumbs.db
 
 # --- Local scratch folder ---
 _to_delete/
+
+# --- AgentOS demo runtime data ---
+agentos/agentos.db*
