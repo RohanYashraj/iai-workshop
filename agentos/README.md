@@ -66,11 +66,24 @@ curl -X POST "http://localhost:7777/agents/ip-pricing-agent/runs" -F "message=Pr
 3. **The team answering a product question itself, with a cited source**:
    *"Does PMI include expense and profit loading?"*
 
-## Files
+## Code layout
 
-- `app.py` — the whole application in one file, deliberately readable:
-  data loading → IP tools/guardrails → PMI tools/guardrails → RAG tool →
-  agents → team → `AgentOS`.
+```
+agentos/
+├── app.py                  # entrypoint: assembles AgentOS and serves it
+├── config.py               # API key, model id, data artifacts, session db
+├── tools/
+│   ├── ip_pricing.py       # IP tools + 4 guardrails (notebook 04)
+│   ├── pmi_pricing.py      # PMI tools + guardrails (notebook 05)
+│   └── policy_docs.py      # TF-IDF search over the policy documents
+├── agents/
+│   ├── ip_agent.py         # IP Pricing Agent + its system prompt
+│   └── pmi_agent.py        # PMI Pricing Agent + its system prompt
+├── team/
+│   └── pricing_team.py     # route-mode ABC Health Pricing Desk
+└── scenarios/              # case CSVs for the scaling demo (1/5/10/200)
+```
+
 - `agentos.db` — SQLite session storage, created on first run (gitignored).
 - The pricing artifacts (`*.pkl`) and policy docs (`*.md`) are read from the
   repo root; if missing, they're downloaded from the public repo, same as
