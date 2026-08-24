@@ -1,0 +1,46 @@
+# --- Secrets / environment ---
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- uv ---
+# uv.lock should stay committed for reproducible installs — do NOT ignore it.
+# Only the local environment itself is ignored (covered by .venv/ above).
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# --- Streamlit runtime data ---
+ip_pricing_app/data/chat_history.db
+ip_pricing_app/data/chat_history.db-journal
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# --- Misc local scratch ---
+*.log
+.pytest_cache/
+
+# --- Local scratch folder ---
+_to_delete/

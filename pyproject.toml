@@ -1,0 +1,23 @@
+[project]
+name = "iai-agentic-ai-seminar"
+version = "0.1.0"
+description = "9th IAI Capacity Building Seminar in Health and Care Insurance — notebook environment (01-06 + data notebook)"
+requires-python = ">=3.10"
+dependencies = [
+    "jupyterlab>=4.0",
+    "ipykernel>=6.29",
+    "notebook>=7.0",
+    "google-genai==2.19.0",
+    "google-auth==2.49.0",
+    "agno==2.9.0",
+    "python-dotenv>=1.0",
+    "pandas==2.3.3",
+    "numpy==2.4.6",
+    "matplotlib==3.11.1",
+    "scikit-learn==1.9.0",
+    "xgboost==3.2.0",
+    "shap==0.51.0",
+    "statsmodels==0.14.6",
+    "ipywidgets==8.1.9",
+    "pyarrow==25.0.1",
+]

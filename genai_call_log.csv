@@ -1,0 +1,29 @@
+ts_utc,model,prompt,response
+2026-08-20T19:28:24.469819+00:00,gemini-3.1-flash-lite,"For individual PMI (health) cover, list 5 rating factors.
+For each: name, direction (increase/decrease premium), one-line justification. Return JSON.","[
+  {
+    ""name"": ""Age"",
+    ""direction"": ""Increase"",
+    ""justification"": ""The probability and severity of health conditions rise significantly as an individual gets older.""
+  },
+  {
+    ""name"": ""Geographic Location"",
+    ""direction"": ""Increase"",
+    ""justification"": ""Costs for medical procedures and hospital facilities vary significantly by region and local cost of living.""
+  },
+  {
+    ""name"": ""Medical History"",
+    ""direction"": ""Increase"",
+    ""justification"": ""Pre-existing conditions or a history of chronic illness increase the likelihood of future claims.""
+  },
+  {
+    ""name"": ""Excess/Deductible Amount"",
+    ""direction"": ""Decrease"",
+    ""justification"": ""A higher out-of-pocket contribution from the policyholder reduces the insurer's liability for small claims.""
+  },
+  {
+    ""name"": ""Smoking Status"",
+    ""direction"": ""Increase"",
+    ""justification"": ""Tobacco use is strongly correlated with a higher risk of developing expensive-to-treat diseases like cancer and heart conditions.""
+  }
+]"
